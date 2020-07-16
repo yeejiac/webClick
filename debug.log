@@ -1,0 +1,11 @@
+[0716/202305.736:ERROR:process_reader_win.cc(123)] NtOpenThread: {拒絕存取} 程序已請求存取一物件，但未被授與存取權。 (0xc0000022)
+[0716/202306.140:ERROR:exception_snapshot_win.cc(98)] thread ID 8272 not found in process
+[0716/202307.388:ERROR:process_reader_win.cc(151)] SuspendThread: 存取被拒。 (0x5)
+[0716/202307.388:ERROR:process_reader_win.cc(151)] SuspendThread: 存取被拒。 (0x5)
+[0716/202307.389:ERROR:process_reader_win.cc(123)] NtOpenThread: {拒絕存取} 程序已請求存取一物件，但未被授與存取權。 (0xc0000022)
+[0716/202307.389:ERROR:exception_snapshot_win.cc(98)] thread ID 13948 not found in process
+[0716/203829.489:ERROR:file_io_win.cc(179)] CreateFile C:\Users\yeejiac\AppData\Local\Temp\scoped_dir11980_1184395100\Crashpad\settings.dat: 程序無法存取檔案，因為檔案正由另一個程序使用。 (0x20)
+[0716/204801.092:ERROR:process_reader_win.cc(151)] SuspendThread: 存取被拒。 (0x5)
+[0716/204801.093:ERROR:process_reader_win.cc(151)] SuspendThread: 存取被拒。 (0x5)
+[0716/204801.093:ERROR:process_reader_win.cc(123)] NtOpenThread: {拒絕存取} 程序已請求存取一物件，但未被授與存取權。 (0xc0000022)
+[0716/204801.131:ERROR:exception_snapshot_win.cc(98)] thread ID 6584 not found in process
