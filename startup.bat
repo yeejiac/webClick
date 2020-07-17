@@ -11,6 +11,6 @@ Exit 0
 :v2
 echo Execute
 REM pip install -r requirements.txt
-python webClick.py
-Pause
-Exit 0
+py webClick.py
+REM Pause
+REM Exit 0
