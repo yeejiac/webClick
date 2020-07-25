@@ -1,41 +1,25 @@
-import requests
-# from bs4 import BeautifulSoup
-# import urllib.request
-import shutil
-import eventlet
-eventlet.monkey_patch()
-from IPython.display import display, clear_output
-import requests as rq
-from bs4 import BeautifulSoup
-import datetime
-import sched
-import time
-import json
+import urllib.request
+import lxml.html
 
-stock_list = ['0056']
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
-def download_pic(num, pic_url):
-    with eventlet.Timeout(10):
-        # pic_num = './doc/pic/'+ str(num) + '.jpg'
-        img_data = requests.get(pic_url, headers = header)
-        if img_data.status_code == 200:
-            print(img_data.text)
-            # with open(pic_num, 'wb') as handler:
-            #     handler.write(img_data)
+req = urllib.request.Request(r'https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?ssoauth=1&loadingjs=1&o=dwebmge&cache=1595693886342')
+f = urllib.request.urlopen(req)
+page = f.read()
 
-def stock_crawler(targets):#每日股價資料
-    clear_output(wait = True)
-    stock_list = '|'.join('tse_{}.tw'.format(target) for target in targets)
-    site = "http://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=" + stock_list
-    response = rq.get(site)
-    data = json.loads(response.text)
-    print(data)
+tree = lxml.html.fromstring(page)
+imgurl = "https://ndltd.ncl.edu.tw" + \
+      tree.xpath(".//img")[0].get('src')
 
+print(imgurl)
+
+req = urllib.request.Request("https://ndltd.ncl.edu.tw/gs32/images/random_validationimgs/XF.l4v_1595691820.jpg?v=1595691820")
+f = urllib.request.urlopen(req)
+img = f.read()
+
+open('out.jpg', 'wb').write(img)
         
-if __name__ == '__main__':
-    # download_pic(1,url)
-    stock_crawler(stock_list)
-    
+
    
         
 
